@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="images/shopping_cart.png">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container" id="shoppingcart">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item" id="phone">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id= "decrementItem1" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id= "phoneQty" type="text" class="form-control text-center" value="1">
+                           <button id= "incrementItem1" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$<span id= "phonePrice">1200</span></h5>
+                        <img id= "removeItem1" src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item" id="casing">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id= "decrementItem2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id= "casingQty" type="text" class="form-control text-center" value="1">
+                           <button id= "incrementItem2" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5><span id= "casingPrice">50</span></h5>
+                        <img id= "removeItem2" src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax (5%):</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id= "subtotal">1250</span></h5>
+                        <h5>$<span id= "tax">62.50</span></h5>
+                        <h5>$<span id= "total">1312.50</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button id = "checkoutbtn" type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- delivery Details Part-->
+   <section id="deliveryDetails" class="d-none">
+      <div class="container mt-5">
+         <div class="bg-light p-5">
+            <h2>Fill Delivery Details</h2>
+            <form action="" id="deliveryDetailsForm">
+               
+               <div class="col-md-2 float-left">Name</div>
+               <div class="col-md-12">
+                  <input type="text" id="customerName" class="form-control" placeholder="Enter Your Full Name"><br>
+               </div>
+               <div class="col-md-2 float-left">Email</div>
+               <div class="col-md-12">
+                  <input type="text" id="customerEmail" class="form-control" placeholder="Enter Your Email Address"><br>
+               </div>
+               <div class="col-md-2 float-left">Phone Number</div>
+               <div class="col-md-12">
+                  <input type="text" id="customerPhone" class="form-control" placeholder="Enter Your Phone Number"><br>
+               </div>
+               <div class="col-md-2 float-left">Present Address</div>
+               <div class="col-md-12">
+                  <input type="text" id="customerAddress" class="form-control" placeholder="Enter Your Present Address"><br>
+               </div>
+               <div class="col-md-12">
+                  <button type="submit" class="btn btn-success float-right">Confirm and Submit</button>
+               </div>
+               <!-- <div class="form-group">
+                  <label for="formGroupExampleInput1">Name</label> <br>
+                  <input type="text" class="form-group" id="customerName" placeholder="Enter Your Full Name">
+               </div>
+               <div class="form-group">
+                  <label for="formGroupExampleInput2">Email</label>
+                  <input type="text" class="form-group" id="customerEmail" placeholder="Enter Your Email Address">
+               </div>
+               <div class="form-group">
+                  <label for="formGroupExampleInput2">Phone Number</label>
+                  <input type="text" class="form-group" id="customerPhone" placeholder="Enter Your Phone Number">
+               </div>
+               <div class="form-group">
+                  <label for="formGroupExampleInput2">Present Address</label>
+                  <input type="text" class="form-group" id="customerAddress" placeholder="Enter Your Present Address">
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-success">Confirm and Submit</button>
+               </div> -->
+            </form>
+         
+         </div>
+      </div>
+
+   </section>
+
+   <!-- Invoice Part-->
+   <section id="invoice" class="d-none">
+      <div class="container my-5">
+         <div class=" bg-light p-5">
+         <h2 class="text-center text-success">Your Order is Confirmed</h2>
+         <h4 class="text-center">Order Details</h4>
+         <hr>
+
+         <div class="customer-details my-5">
+            <h5>Customer Name : <span class="text-secondary" id="showCustomerName"></span> </h5>
+            <h5>Customer Contact No : <span class="text-secondary"  id="showCustomerPhone"></span> </h5>
+            <h5>Customer Email : <span class="text-secondary"  id="showCustomerEmail"></span> </h5>
+            <h5>Delivery Address : <span class="text-secondary"  id="showCustomerAddress"></span> </h5>
+         </div>
+         
+         <div class="card">
+            <div class="card-header">Order Summery</div>
+            <div class="card-body">
+               <div class="table-responsive">
+                  <table class="table table-condensed">
+                     <thead>
+                        <tr>
+                            <td><strong>Item</strong></td>
+                            <td class="text-center"><strong>Price</strong></td>
+                            <td class="text-center"><strong>Quantity</strong></td>
+                            <td class="text-right"><strong>Totals</strong></td>
+                         </tr>
+                     </thead>
+                     <tbody>
+                        
+                        <tr id="invoice-phone">
+                           <td>iPhone 11 128GB Black</td>
+                           <td class="text-center">$ <span id="invoice-phonePrice">1200</span></td>
+                           <td class="text-center" id="invoice-phoneQty">1</td>
+                           <td class="text-right">$<span id="invoice-phoneTotal">1200</span></td>
+                        </tr>     
+                        <tr id="invoice-casing">
+                           <td>iPhone 11 Silicone Case - Black</td>
+                           <td class="text-center">$ <span id="invoice-casingPrice">50</span></td>
+                           <td class="text-center" id="invoice-casingQty">1</td>
+                           <td class="text-right">$<span id="invoice-casingTotal">50</span></td>
+                        </tr>                        
+                        <tr>
+                           <td class="thick-line"></td>
+                           <td class="thick-line"></td>
+                           <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                           <td class="thick-line text-right">$<span id="invoice-subtotal">1250</span></td>
+                        </tr>
+                        <tr>
+                           <td class="no-line"></td>
+                           <td class="no-line"></td>
+                           <td class="no-line text-center"><strong>Tax</strong></td>
+                           <td class="no-line text-right">$<span id="invoice-tax">62.60</span></td>
+                        </tr>
+                        <tr>
+                           <td class="no-line"></td>
+                           <td class="no-line"></td>
+                           <td class="no-line text-center"><strong>Total</strong></td>
+                           <td class="no-line text-right"> <strong>$<span id="invoice-total">1312.50</span></strong></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+
+      </div>
+</div>
+
+   </section>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
